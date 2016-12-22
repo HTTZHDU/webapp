@@ -207,22 +207,32 @@
 		function main(){
 			StyleChange();
 		}
-		function ChangeBkColor(){
-				$('.night').click(function(){
-				$('body').css(bk_7);
-				$('.night').hide();
-				$('.night-img').hide();
-				$('.daylight-img').show();
-				$('.daylight').show();
-			});
-			$('.daylight').click(function(){
-				$('body').css(bk_6);
-				$('.daylight').hide();
-				$('.daylight-img').hide();
-				$('.night').show();
-				$('.night-img').show();
+		// function ChangeBkColor(){
+		// 		$('.night').click(function(){
+		// 		$('body').css(bk_7);
+		// 		$('.night').hide();
+		// 		$('.night-img').hide();
+		// 		$('.daylight-img').show();
+		// 		$('.daylight').show();
+		// 	});
+		// 	$('.daylight').click(function(){
+		// 		$('body').css(bk_6);
+		// 		$('.daylight').hide();
+		// 		$('.daylight-img').hide();
+		// 		$('.night').show();
+		// 		$('.night-img').show();
+		// 	})
+		// }
+		function StyleChange(){
+			$('#touch').click(function(){
+				if(Dom.container_title.css('display') == 'none'){
+					$('#container-title').show();
+					$('#footbar').show();
+				}else{
+					$('#container-title').hide();
+					$('#footbar').hide();
+				}
 			})
-		}
 			$('.night').click(function(){
 				$('body').css(bk_7);
 				$('.night').hide();
