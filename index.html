@@ -9,7 +9,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<div id="root" class="container">
+	<div id="root" class="container" >
 		<div id="container-title" class="container-bar" style="display: none;">
 			<div id="back"></div>
 			<div id="back-inf">返回书架</div>
@@ -147,10 +147,20 @@
 		</div>
 		
 	</div>
-	<div id="bookcase">
-		<div id="bookcase-title"></div>
-		<div id="bookcase-content"></div>
-		<div id="bookcase-footbar"></div>
+	<div id="bookcase" style="display: none;">
+		<div id="bookcase-title">
+			<div class="title-bc">书架</div>
+			<div class="back-home"></div>
+		</div>
+		<div id="bookcase-content">
+			<div class="book"></div>
+			<div class="book"></div>
+			<div class="book"></div>
+			<div class="book"></div>
+		</div>
+		<div id="bookcase-footbar">
+			<div class="bc-t">web app阅读器</div>
+		</div>
 	</div>
 	<script type="text/javascript" src="lib/zepto.min.js"></script>
 	<script type="text/javascript">
@@ -207,22 +217,6 @@
 		function main(){
 			StyleChange();
 		}
-		// function ChangeBkColor(){
-		// 		$('.night').click(function(){
-		// 		$('body').css(bk_7);
-		// 		$('.night').hide();
-		// 		$('.night-img').hide();
-		// 		$('.daylight-img').show();
-		// 		$('.daylight').show();
-		// 	});
-		// 	$('.daylight').click(function(){
-		// 		$('body').css(bk_6);
-		// 		$('.daylight').hide();
-		// 		$('.daylight-img').hide();
-		// 		$('.night').show();
-		// 		$('.night-img').show();
-		// 	})
-		// }
 		function StyleChange(){
 			$('#touch').click(function(){
 				if(Dom.container_title.css('display') == 'none'){
@@ -232,6 +226,7 @@
 					$('#container-title').hide();
 					$('#footbar').hide();
 				}
+				$('#style').hide();
 			})
 			$('.night').click(function(){
 				$('body').css(bk_7);
@@ -260,7 +255,6 @@
 			})
 			$('#bk-1').click(function(){
 				$('body').css(bk_1);
-				ChangeBkColor();
 			})
 			$('#bk-2').click(function(){
 				$('body').css(bk_2);
@@ -276,6 +270,14 @@
 			})
 			$('#back').click(function(){
 				//返回书架
+			})
+			$('.back-home').click(function(){
+				$('#root').show();
+				$('#bookcase').hide();
+			})
+			$('#back').click(function(){
+				$('#root').hide();
+				$('#bookcase').show();
 			})
 			Win.scroll(function(){
 				Dom.container_title.hide();
