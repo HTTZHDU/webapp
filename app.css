@@ -238,6 +238,7 @@ button{
 		}
 #bookcase{
 	background: #CFE77E;
+	overflow-x: hidden;
 	/*border: 8px solid #98AD69;
 	border-left: 8px solid #98AD69;
 	border-right: 8px solid #98AD69;*/
@@ -272,13 +273,17 @@ button{
 }
 .book{
 	position: relative;
-	top: 6%;
+	top: 8%;
 	left: 10%;
 	width: 22%;
 	height: 24%;
 	float: left;
 	margin: 10px;
-	background: #000;
+	/*background: #000;*/
+}
+#book1{
+	background-image: url(hlm.jpg);
+	background-size: contain;
 }
 .back-home{
 			position: absolute;
